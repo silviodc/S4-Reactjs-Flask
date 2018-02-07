@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  restfull-app:
+      container_name: "server-side"
+      restart: always
+      build:
+        context: ./server
+        dockerfile: Dockerfile
+        args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
+      volumes:
+        - ./server/myapp/:/myapp/
+      ports:
+        - 5000:5000
+  react_demo:
+    container_name: "client-side"
+    restart: always
+    build:
+      context: ./S4exempleReact
+      dockerfile: Dockerfile
+      args:
+      - http_proxy
+      - https_proxy
+      - no_proxy
+    volumes:
+     - ./S4exempleReact/public:/public/
+     - ./S4exempleReact/src:/src/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - restfull-app
+    links:
+      - restfull-app
