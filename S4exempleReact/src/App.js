@@ -14,7 +14,7 @@ class App extends Component {
 
   loadData (path) {
   //
-  window.fetch('http://127.0.0.1:5000/tweets/GottaGetEmAll')
+  window.fetch('http://127.0.0.1:5001/tweets/GottaGetEmAll')
 //  window.fetch('./data/exemple.json')
     .then(res => {
       console.log(res);

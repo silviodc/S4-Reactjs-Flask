@@ -14,7 +14,7 @@ services:
       volumes:
         - ./server/myapp/:/myapp/
       ports:
-        - 5000:5000
+        - 5001:5001
   react_demo:
     container_name: "client-side"
     restart: always
@@ -29,7 +29,7 @@ services:
      - ./S4exempleReact/public:/public/
      - ./S4exempleReact/src:/src/
     ports:
-      - "3000:3000"
+      - "3001:3000"
     depends_on:
       - restfull-app
     links:

@@ -16,10 +16,11 @@ COPY ./ .
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
+EXPOSE 3000
+
 # install and cache app dependencies
 RUN npm install --silent \
-&& npm install react-scripts@1.1.0 -g --silent \
-&& npm install cors
+&& npm install react-scripts@1.1.0 -g --silent
 
 # start app
 CMD ["npm", "start"]

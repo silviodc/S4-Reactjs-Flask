@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y python-pip python-dev \
  WORKDIR /myapp/
 
 # Make port 80 available to the world outside this container
-EXPOSE 5000
+EXPOSE 5001
 
 # Run app.py when the container launches
 CMD ["python", "rest-server.py"]
