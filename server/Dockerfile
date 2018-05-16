@@ -1,4 +1,5 @@
 # Use an official Python runtime as a parent image
+# This image is based on the popular Alpine Linux project
 FROM python:3.6-alpine
 
 # Set the file requirement

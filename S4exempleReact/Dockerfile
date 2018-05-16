@@ -1,6 +1,6 @@
-# You should always specify a full version here to ensure all of your developers
+# You should always specify a alpine version here to ensure all of your developers
 # are running the same version of Node.
-FROM node:alpine
+FROM node:9.5.0-alpine
 
 ARG http_proxy
 ARG https_proxy
