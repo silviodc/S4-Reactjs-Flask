@@ -1,6 +1,6 @@
-# You should always specify a full version here to ensure all of your developers
+# You should always specify a full or alpine version here to ensure all of your developers
 # are running the same version of Node.
-FROM node:9.5.0
+FROM node:9.5.0-alpine
 
 ARG http_proxy
 ARG https_proxy
@@ -20,7 +20,7 @@ EXPOSE 3000
 
 # install and cache app dependencies
 RUN npm install --silent \
-&& npm install react-scripts@1.1.0 -g --silent
+  && npm install react-scripts@1.1.0 -g --silent
 
 # start app
 CMD ["npm", "start"]
