@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.6
+FROM python:3.6-alpine
 
 # Set the file requirement
 ADD requirements.txt ./
@@ -13,8 +13,7 @@ RUN export http_proxy=$http_proxy \
   && export no_proxy=$no_proxy
 
 # Install any needed packages specified in requirements.txt
-RUN apt-get update && apt-get install -y python-pip python-dev \
- && pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install -r requirements.txt
 
  # Set the working directory to /twitter
  COPY ./myapp /myapp
