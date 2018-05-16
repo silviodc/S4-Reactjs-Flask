@@ -1,4 +1,4 @@
-# You should always specify a alpine version here to ensure all of your developers
+# You should always specify a full or alpine version here to ensure all of your developers
 # are running the same version of Node.
 FROM node:9.5.0-alpine
 
